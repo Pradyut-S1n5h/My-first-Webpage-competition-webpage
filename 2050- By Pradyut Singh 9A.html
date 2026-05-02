@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>System 2050 Interface</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at top, #0f172a, #020617);
+    color: #e2e8f0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 38px;
+    margin-top: 20px;
+    background: linear-gradient(90deg, #38bdf8, #a78bfa);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.author {
+    text-align: center;
+    color: #94a3b8;
+    margin-top: -10px;
+    font-size: 14px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #94a3b8;
+    margin-bottom: 10px;
+}
+
+.intro {
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+    color: #cbd5f5;
+    font-size: 15px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s;
+    text-align: center;
+}
+
+.card img {
+    width: 50px;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 0 8px rgba(56,189,248,0.6));
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 0 20px rgba(56,189,248,0.4);
+}
+
+.status {
+    font-size: 12px;
+    margin-top: 10px;
+    color: #22c55e;
+}
+
+.details {
+    display: none;
+    margin: 20px;
+    padding: 25px;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(167,139,250,0.3);
+    text-align: center;
+}
+
+.details img {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+.details h2 {
+    color: #a78bfa;
+}
+
+.back {
+    margin-top: 15px;
+    padding: 8px 15px;
+    background: linear-gradient(90deg, #38bdf8, #a78bfa);
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.log {
+    background: #020617;
+    padding: 15px;
+    margin: 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    border: 1px solid rgba(56,189,248,0.3);
+}
+
+.footer {
+    text-align: center;
+    margin: 20px;
+    font-size: 14px;
+}
+
+a {
+    color: #38bdf8;
+}
+</style>
+
+<script>
+function showDetail(id) {
+    document.getElementById("main").style.display = "none";
+    document.getElementById(id).style.display = "block";
+}
+
+function goBack() {
+    document.getElementById("main").style.display = "grid";
+    let sections = document.getElementsByClassName("details");
+    for (let i = 0; i < sections.length; i++) {
+        sections[i].style.display = "none";
+    }
+}
+</script>
+
+</head>
+<body>
+
+<h1>System 2050</h1>
+<div class="author">By Pradyut Singh | 9th A DPSGV</div>
+
+<p class="subtitle">AI-Integrated Human Life Interface</p>
+
+<p class="intro">
+In <b>2050</b>, artificial intelligence will manage everyday life, making systems faster, smarter, and more efficient. 
+Humans and machines will work together seamlessly, creating a world where decisions, health, learning, and environments are optimized automatically.
+</p>
+
+<div id="main" class="container">
+
+<div class="card" onclick="showDetail('edu')">
+<img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png">
+<h2>Education AI</h2>
+<p><i>Adaptive intelligence learning</i></p>
+<p class="status">Status: Online</p>
+</div>
+
+<div class="card" onclick="showDetail('health')">
+<img src="https://cdn-icons-png.flaticon.com/512/2966/2966481.png">
+<h2>Health System</h2>
+<p><i>Real-time biological monitoring</i></p>
+<p class="status">Status: Stable</p>
+</div>
+
+<div class="card" onclick="showDetail('transport')">
+<img src="https://cdn-icons-png.flaticon.com/512/744/744465.png">
+<h2>Transport Grid</h2>
+<p><i>Autonomous mobility network</i></p>
+<p class="status">Status: Synced</p>
+</div>
+
+<div class="card" onclick="showDetail('home')">
+<img src="https://cdn-icons-png.flaticon.com/512/1048/1048953.png">
+<h2>Smart Habitat</h2>
+<p><i>Environment adaptation system</i></p>
+<p class="status">Status: Active</p>
+</div>
+
+</div>
+
+<!-- DETAILS -->
+
+<div id="edu" class="details">
+<img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png">
+<h2>Education AI System</h2>
+<p><b>Efficiency:</b> 82%</p>
+<p><i>Example:</i> A student struggling in math is instantly given visual simulations and easier explanations by AI.</p>
+<ul>
+<li>Neural feedback learning</li>
+<li>Zero exams</li>
+<li>Skill-based growth</li>
+</ul>
+<p><b>Challenge:</b> Less human interaction</p>
+<button class="back" onclick="goBack()">Return</button>
+</div>
+
+<div id="health" class="details">
+<img src="https://cdn-icons-png.flaticon.com/512/2966/2966481.png">
+<h2>Health Monitoring</h2>
+<p><i>Example:</i> Wearables detect early signs of heart disease before symptoms appear.</p>
+<ul>
+<li>Early disease detection</li>
+<li>Auto alerts</li>
+<li>AI diagnosis</li>
+</ul>
+<p><b>Risk:</b> Privacy issues</p>
+<button class="back" onclick="goBack()">Return</button>
+</div>
+
+<div id="transport" class="details">
+<img src="https://cdn-icons-png.flaticon.com/512/744/744465.png">
+<h2>Transport Grid</h2>
+<p><i>Example:</i> An AI pod arrives automatically and selects the fastest route with zero traffic.</p>
+<ul>
+<li>No traffic</li>
+<li>Safe travel</li>
+<li>Fast routing</li>
+</ul>
+<p><b>Risk:</b> System failure impact</p>
+<button class="back" onclick="goBack()">Return</button>
+</div>
+
+<div id="home" class="details">
+<img src="https://cdn-icons-png.flaticon.com/512/1048/1048953.png">
+<h2>Smart Habitat</h2>
+<p><i>Example:</i> Lights dim automatically and music changes based on your mood.</p>
+<ul>
+<li>Auto lighting</li>
+<li>Climate control</li>
+<li>AI scheduling</li>
+</ul>
+<p><b>Risk:</b> Overdependence</p>
+<button class="back" onclick="goBack()">Return</button>
+</div>
+
+<div class="log">
+<p><b>System Log:</b></p>
+<p>→ Wake-up optimized</p>
+<p>→ Focus drop detected</p>
+<p>→ Nutrition adjusted</p>
+<p>→ Sleep recommended</p>
+</div>
+
+<div class="log">
+<p><b>Global Challenges in 2050:</b></p>
+<ul>
+<li>Data privacy risks</li>
+<li>Overdependence on AI</li>
+<li>System-wide failures</li>
+</ul>
+</div>
+
+<div class="footer">
+<p>
+<a href="https://en.wikipedia.org/wiki/Future" target="_blank">Explore future technology</a>
+</p>
+<p><br><b>Note:</b> AI improves life but must be controlled responsibly.</p>
+</div>
+
+</body>
+</html>
